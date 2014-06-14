@@ -25,6 +25,19 @@
     [self.view addSubview:block];
     self.block = block;
     
+    CGAffineTransform scaleTrans = CGAffineTransformMakeScale(2, 2);
+    CGAffineTransform rotateTrans = CGAffineTransformMakeRotation(90 * M_PI / 180);
+    
+    [UIView animateWithDuration:3.0 animations:^{
+        self.block.alpha = 0.0;
+        self.block.center = CGPointMake(self.block.center.x, self.block.center.y + 75);
+        
+        self.block.transform = CGAffineTransformConcat(scaleTrans, rotateTrans);
+    } completion:^(BOOL finished) {
+        self.block.alpha = 1.0;
+    }];
+
+    
 }
 
 - (void)didReceiveMemoryWarning
