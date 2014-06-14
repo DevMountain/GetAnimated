@@ -11,6 +11,7 @@
 @interface GAViewController ()
 
 @property (nonatomic, strong) UIView *block;
+@property (nonatomic, strong) UIView *smallBlock;
 
 @end
 
@@ -25,16 +26,33 @@
     [self.view addSubview:block];
     self.block = block;
     
+    UIView *smallBlock = [[UIView alloc] initWithFrame:CGRectMake(100, 100, 120, 120)];
+    smallBlock.backgroundColor = [UIColor yellowColor];
+    [self.view addSubview:smallBlock];
+    self.smallBlock = smallBlock;
+    
+    
     CGAffineTransform scaleTrans = CGAffineTransformMakeScale(2, 2);
     CGAffineTransform rotateTrans = CGAffineTransformMakeRotation(90 * M_PI / 180);
+
+    
+    CGAffineTransform shrinkTrans = CGAffineTransformMakeScale(0.5, 0.5);
+
     
     [UIView animateWithDuration:3.0 animations:^{
         self.block.alpha = 0.0;
         self.block.center = CGPointMake(self.block.center.x, self.block.center.y + 75);
         
         self.block.transform = CGAffineTransformConcat(scaleTrans, rotateTrans);
+        
+        self.smallBlock.alpha = 0.0;
+        self.smallBlock.center = CGPointMake(self.block.center.x, self.block.center.y - 10);
+
+        self.smallBlock.transform = CGAffineTransformConcat(shrinkTrans, rotateTrans);
+        
     } completion:^(BOOL finished) {
         self.block.alpha = 1.0;
+        self.smallBlock.alpha = 1.0;
     }];
 
     
