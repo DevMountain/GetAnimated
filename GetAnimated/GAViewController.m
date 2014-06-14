@@ -10,6 +10,8 @@
 
 @interface GAViewController ()
 
+@property (nonatomic, strong) UIView *block;
+
 @end
 
 @implementation GAViewController
@@ -17,7 +19,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    
+    UIView *block = [[UIView alloc] initWithFrame:CGRectMake(60, 60, 200, 200)];
+    block.backgroundColor = [UIColor cyanColor];
+    [self.view addSubview:block];
+    self.block = block;
+    
 }
 
 - (void)didReceiveMemoryWarning
