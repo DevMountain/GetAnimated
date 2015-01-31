@@ -10,8 +10,8 @@
 
 @interface GAViewController ()
 
-@property (nonatomic, strong) UIView *block;
-@property (nonatomic, strong) UIView *smallBlock;
+@property (nonatomic, strong) UIView *square;
+@property (nonatomic, strong) UIView *smallSquare;
 
 @end
 
@@ -21,15 +21,15 @@
 {
     [super viewDidLoad];
     
-    UIView *block = [[UIView alloc] initWithFrame:CGRectMake(60, 60, 200, 200)];
-    block.backgroundColor = [UIColor cyanColor];
-    [self.view addSubview:block];
-    self.block = block;
+    UIView *square = [[UIView alloc] initWithFrame:CGRectMake(60, 60, 200, 200)];
+    square.backgroundColor = [UIColor cyanColor];
+    [self.view addSubview:square];
+    self.square = square;
     
-    UIView *smallBlock = [[UIView alloc] initWithFrame:CGRectMake(100, 100, 120, 120)];
-    smallBlock.backgroundColor = [UIColor yellowColor];
-    [self.view addSubview:smallBlock];
-    self.smallBlock = smallBlock;
+    UIView *smallSquare = [[UIView alloc] initWithFrame:CGRectMake(100, 100, 120, 120)];
+    smallSquare.backgroundColor = [UIColor yellowColor];
+    [self.view addSubview:smallSquare];
+    self.smallSquare = smallSquare;
 
     
     // Block animations
@@ -43,19 +43,19 @@
 //
 //    
 //    [UIView animateWithDuration:3.0 animations:^{
-//        self.block.alpha = 0.0;
-//        self.block.center = CGPointMake(self.block.center.x, self.block.center.y + 75);
+//        self.square.alpha = 0.0;
+//        self.square.center = CGPointMake(self.square.center.x, self.square.center.y + 75);
 //        
-//        self.block.transform = CGAffineTransformConcat(scaleTrans, rotateTrans);
+//        self.square.transform = CGAffineTransformConcat(scaleTrans, rotateTrans);
 //        
-//        self.smallBlock.alpha = 0.0;
-//        self.smallBlock.center = CGPointMake(self.block.center.x, self.block.center.y - 10);
+//        self.smallSquare.alpha = 0.0;
+//        self.smallSquare.center = CGPointMake(self.square.center.x, self.square.center.y - 10);
 //
-//        self.smallBlock.transform = CGAffineTransformConcat(shrinkTrans, rotateTrans);
+//        self.smallSquare.transform = CGAffineTransformConcat(shrinkTrans, rotateTrans);
 //        
 //    } completion:^(BOOL finished) {
-//        self.block.alpha = 1.0;
-//        self.smallBlock.alpha = 1.0;
+//        self.square.alpha = 1.0;
+//        self.smallSquare.alpha = 1.0;
 //    }];
 
     
@@ -63,13 +63,13 @@
     
 //    CABasicAnimation *animation = [CABasicAnimation animation];
 //    animation.keyPath = @"position.y";
-//    animation.fromValue = @(self.block.center.y);
-//    animation.toValue = @(self.block.center.y + 75);
+//    animation.fromValue = @(self.square.center.y);
+//    animation.toValue = @(self.square.center.y + 75);
 //    animation.duration = 3;
 //    
-//    [self.block.layer addAnimation:animation forKey:@"basic"];
+//    [self.square.layer addAnimation:animation forKey:@"basic"];
 //    
-//    self.block.layer.position = CGPointMake(self.block.layer.position.x, self.block.layer.position.y + 75);
+//    self.square.layer.position = CGPointMake(self.square.layer.position.x, self.square.layer.position.y + 75);
     
 
     
@@ -83,8 +83,8 @@
 //    
 //    keyFrameAnimation.additive = YES;
 //    
-//    [self.block.layer addAnimation:keyFrameAnimation forKey:@"shake"];
-//    [self.smallBlock.layer addAnimation:keyFrameAnimation forKey:@"shake"];
+//    [self.square.layer addAnimation:keyFrameAnimation forKey:@"shake"];
+//    [self.smallSquare.layer addAnimation:keyFrameAnimation forKey:@"shake"];
     
     
 
@@ -102,22 +102,22 @@
 //    orbit.calculationMode = kCAAnimationPaced;
 //    orbit.rotationMode = kCAAnimationRotateAuto;
 //    
-//    [self.smallBlock.layer addAnimation:orbit forKey:@"orbit"];
+//    [self.smallSquare.layer addAnimation:orbit forKey:@"orbit"];
 
     
     // Move animation (with timing)
     
 //    CABasicAnimation *animation = [CABasicAnimation animation];
 //    animation.keyPath = @"position.y";
-//    animation.fromValue = @(self.block.center.y);
-//    animation.toValue = @(self.block.center.y + 175);
+//    animation.fromValue = @(self.square.center.y);
+//    animation.toValue = @(self.square.center.y + 175);
 //    animation.duration = 3;
 //    
 //    animation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
 //
-//    [self.block.layer addAnimation:animation forKey:@"basic"];
+//    [self.square.layer addAnimation:animation forKey:@"basic"];
 //
-//    self.block.layer.position = CGPointMake(self.block.layer.position.x, self.block.layer.position.y + 175);
+//    self.square.layer.position = CGPointMake(self.square.layer.position.x, self.square.layer.position.y + 175);
 
     
 }
